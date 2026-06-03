@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-typecheck-js:
+    name: Lint & typecheck (JS/TS)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+
+  test-js:
+    name: Test (JS/TS)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm test
+
+  lint-and-typecheck-py:
+    name: Lint & typecheck (Python)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/pi
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+          python-version: '3.11'
+          cache-dependency-glob: apps/pi/pyproject.toml
+      - run: uv sync --group dev
+      - run: uv run ruff check .
+      - run: uv run black --check .
+      - run: uv run mypy src/
+
+  test-py:
+    name: Test (Python)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/pi
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v3
+        with:
+          enable-cache: true
+          python-version: '3.11'
+          cache-dependency-glob: apps/pi/pyproject.toml
+      - run: uv sync --group dev
+      - run: uv run pytest

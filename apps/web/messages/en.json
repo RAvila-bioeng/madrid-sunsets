@@ -1,0 +1,149 @@
+{
+  "common": {
+    "siteName": "Cielo",
+    "footer": "Made with care from Madrid · {year}"
+  },
+  "nav": {
+    "home": "Home",
+    "live": "Live",
+    "about": "About",
+    "login": "Sign in"
+  },
+  "home": {
+    "app": {
+      "eyebrow": "private sky",
+      "title": "Your daily postcard from Madrid"
+    },
+    "tabs": {
+      "label": "Home sections",
+      "today": "Today",
+      "archive": "Archive"
+    },
+    "today": {
+      "eyebrowToday": "today in Madrid",
+      "eyebrowLatest": "the latest saved evening",
+      "titleToday": "Today’s sky has arrived.",
+      "titleLatest": "The latest saved evening.",
+      "titleEmpty": "Today’s sky has not arrived yet.",
+      "descriptionToday": "A small postcard of light, kept for you.",
+      "descriptionLatest": "Until today’s sky arrives, this evening is waiting quietly.",
+      "descriptionEmpty": "When the Pi chooses this evening’s photo, it will appear here.",
+      "capturedAt": "captured at {time}",
+      "view": "View this sunset",
+      "login": "Sign in to view",
+      "archive": "View archive",
+      "emptyCard": "Today’s photo has not arrived yet.",
+      "photoAlt": "Madrid sunset from {date}"
+    },
+    "archive": {
+      "eyebrow": "archive",
+      "publicTitle": "Earlier evenings",
+      "publicDescription": "The full memory waits behind the link.",
+      "recipientTitle": "The evening drawer",
+      "recipientDescription": "Every saved light, one by one."
+    },
+    "empty": {
+      "title": "No photos yet this month",
+      "description": "Come back soon: sunset arrives every evening."
+    }
+  },
+  "calendar": {
+    "months": {
+      "january": "January",
+      "february": "February",
+      "march": "March",
+      "april": "April",
+      "may": "May",
+      "june": "June",
+      "july": "July",
+      "august": "August",
+      "september": "September",
+      "october": "October",
+      "november": "November",
+      "december": "December"
+    },
+    "previous": "Previous month",
+    "next": "Next month",
+    "gridAriaLabel": "Photos from the month",
+    "today": "Today",
+    "noPhotoYet": "No photo yet",
+    "loginToView": "Sign in to view",
+    "dayAriaLabel": "View sunset on {date}",
+    "empty": {
+      "title": "No photos this month",
+      "description": "There are no captures for this period yet."
+    }
+  },
+  "day": {
+    "back": "Back to month",
+    "modal": {
+      "ariaLabel": "Sunset detail",
+      "close": "Close sunset detail"
+    },
+    "strip": {
+      "ariaLabel": "Photos from the day"
+    },
+    "meta": {
+      "date": "date",
+      "sunset": "sunset",
+      "weather": "sky"
+    },
+    "empty": {
+      "title": "No photos this day",
+      "description": "The Pi did not capture any images this evening."
+    },
+    "photoAlt": "Sunset in Madrid on {date} at {time}",
+    "markBest": "Mark as best photo"
+  },
+  "live": {
+    "close": "Close live view",
+    "badge": "live",
+    "waiting": "Waiting for a capture...",
+    "description": "Real-time view from Madrid",
+    "request": "Ask for a new photo",
+    "requestLabel": "Ask the sky for a photo"
+  },
+  "about": {
+    "title": "About this project",
+    "body": "Every evening, a camera in Madrid looks west. It waits, watches, chooses. The best sunset image arrives here, with no filters, no editing, just the day’s last light over the city rooftops.",
+    "body2": "A gift made with patience, code, and many sunlit evenings."
+  },
+  "auth": {
+    "login": {
+      "title": "I was waiting for you",
+      "description": "Enter your email and I’ll send you a link and a code.",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@email.com",
+      "submit": "Send me the link",
+      "pending": "Sending...",
+      "softMessage": "If Supabase can send to that address, you’ll receive a code shortly.",
+      "linkExpired": "The link has expired or was already used. Request a new code.",
+      "sendFailed": "Could not send the code. Please try again in a moment."
+    },
+    "verify": {
+      "title": "Almost in",
+      "description": "Open the email link, or type the code sent to <b>{email}</b>.",
+      "codeLabel": "Email code",
+      "submit": "Sign in",
+      "pending": "Checking...",
+      "invalidCode": "That code is incorrect or has expired.",
+      "noCode": "Didn’t get it?",
+      "requestNew": "Request a new code"
+    },
+    "menu": {
+      "label": "Account",
+      "signOut": "Sign out"
+    },
+    "welcome": "Hi 🌅"
+  },
+  "theme": {
+    "light": "Light mode",
+    "dark": "Dark mode",
+    "system": "System",
+    "toggleLabel": "Change color theme"
+  },
+  "meta": {
+    "title": "Madrid Sky",
+    "description": "A Madrid sunset, every day."
+  }
+}

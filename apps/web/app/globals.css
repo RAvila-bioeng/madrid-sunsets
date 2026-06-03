@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+@theme {
+  /* Design tokens — reference CSS custom properties so they switch with the theme */
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-border: var(--border);
+  --color-accent-warm: var(--accent-warm);
+  --color-accent-rose: var(--accent-rose);
+  --color-accent-gold: var(--accent-gold);
+
+  --font-sans: var(--font-geist-sans), system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-display: var(--font-fraunces), Georgia, serif;
+
+  /* Expose easing as a CSS custom property; use in inline styles or CSS */
+  --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── Light mode (default) ────────────────────────────────────────────────── */
+:root {
+  --background: #faf7f2;
+  --surface: #ffffff;
+  --foreground: #1c1917;
+  --foreground-muted: #78716c;
+  --border: #e7e5e4;
+  --accent-warm: #e8754b;
+  --accent-rose: #d17d9b;
+  --accent-gold: #e0b872;
+}
+
+/* ── Dark mode: explicit user choice ─────────────────────────────────────── */
+[data-theme="dark"] {
+  --background: #0f0e0d;
+  --surface: #1c1a18;
+  --foreground: #f5f1ea;
+  --foreground-muted: #a8a29e;
+  --border: #292524;
+  --accent-warm: #e8856b;
+  --accent-rose: #c98aa0;
+  --accent-gold: #d4b582;
+}
+
+/* ── Dark mode: OS preference (only when no explicit data-theme) ─────────── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --background: #0f0e0d;
+    --surface: #1c1a18;
+    --foreground: #f5f1ea;
+    --foreground-muted: #a8a29e;
+    --border: #292524;
+    --accent-warm: #e8856b;
+    --accent-rose: #c98aa0;
+    --accent-gold: #d4b582;
+  }
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Reduced motion ───────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,16 @@
+[Unit]
+Description=Sunset Pi capture scheduler
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=sunset-pi
+WorkingDirectory=/opt/sunset-madrid/apps/pi
+ExecStart=/opt/sunset-madrid/apps/pi/.venv/bin/python -m sunset_pi
+Restart=on-failure
+RestartSec=30
+EnvironmentFile=/etc/sunset-pi/config.env
+
+[Install]
+WantedBy=multi-user.target

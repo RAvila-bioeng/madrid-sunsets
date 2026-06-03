@@ -1,0 +1,18 @@
+pre-commit:
+  commands:
+    biome-check:
+      glob: "*.{ts,tsx,js,jsx,mjs,cjs}"
+      run: pnpm exec biome check --write {staged_files}
+      stage_fixed: true
+    ruff-fix:
+      glob: "*.py"
+      # Skip silently if uv is not installed (e.g. local dev on Windows without uv)
+      run: if command -v uv > /dev/null 2>&1; then uv run ruff check --fix {staged_files}; fi
+      stage_fixed: true
+
+pre-push:
+  commands:
+    typecheck:
+      run: pnpm typecheck
+    test:
+      run: pnpm test

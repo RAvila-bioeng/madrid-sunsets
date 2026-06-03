@@ -1,0 +1,149 @@
+{
+  "common": {
+    "siteName": "Cielo",
+    "footer": "Hecho con cariño desde Madrid · {year}"
+  },
+  "nav": {
+    "home": "Inicio",
+    "live": "En vivo",
+    "about": "Sobre esto",
+    "login": "Entrar"
+  },
+  "home": {
+    "app": {
+      "eyebrow": "cielo privado",
+      "title": "Tu postal diaria de Madrid"
+    },
+    "tabs": {
+      "label": "Secciones de inicio",
+      "today": "Hoy",
+      "archive": "Archivo"
+    },
+    "today": {
+      "eyebrowToday": "hoy en Madrid",
+      "eyebrowLatest": "la última tarde guardada",
+      "titleToday": "El cielo de hoy ya está aquí.",
+      "titleLatest": "La última tarde guardada.",
+      "titleEmpty": "Todavía no ha llegado el cielo de hoy.",
+      "descriptionToday": "Una pequeña postal de luz, guardada para ti.",
+      "descriptionLatest": "Mientras llega el cielo de hoy, esta tarde sigue esperando tranquila.",
+      "descriptionEmpty": "Cuando el Pi elija la foto de esta tarde, aparecerá aquí.",
+      "capturedAt": "capturada a las {time}",
+      "view": "Ver esta tarde",
+      "login": "Entrar para verla",
+      "archive": "Ver archivo",
+      "emptyCard": "Todavía no ha llegado la foto de hoy.",
+      "photoAlt": "Atardecer de Madrid del {date}"
+    },
+    "archive": {
+      "eyebrow": "archivo",
+      "publicTitle": "Tardes anteriores",
+      "publicDescription": "La memoria completa queda al otro lado del enlace.",
+      "recipientTitle": "El cajón de las tardes",
+      "recipientDescription": "Todas las luces guardadas, una por una."
+    },
+    "empty": {
+      "title": "Todavía no hay fotos este mes",
+      "description": "Vuelve pronto: el atardecer llega cada tarde."
+    }
+  },
+  "calendar": {
+    "months": {
+      "january": "Enero",
+      "february": "Febrero",
+      "march": "Marzo",
+      "april": "Abril",
+      "may": "Mayo",
+      "june": "Junio",
+      "july": "Julio",
+      "august": "Agosto",
+      "september": "Septiembre",
+      "october": "Octubre",
+      "november": "Noviembre",
+      "december": "Diciembre"
+    },
+    "previous": "Mes anterior",
+    "next": "Mes siguiente",
+    "gridAriaLabel": "Fotos del mes",
+    "today": "Hoy",
+    "noPhotoYet": "Sin foto todavía",
+    "loginToView": "Inicia sesión para ver",
+    "dayAriaLabel": "Ver atardecer del {date}",
+    "empty": {
+      "title": "Sin fotos este mes",
+      "description": "Todavía no hay capturas para este periodo."
+    }
+  },
+  "day": {
+    "back": "Volver al mes",
+    "modal": {
+      "ariaLabel": "Detalle del atardecer",
+      "close": "Cerrar detalle del atardecer"
+    },
+    "strip": {
+      "ariaLabel": "Fotos del día"
+    },
+    "meta": {
+      "date": "fecha",
+      "sunset": "atardecer",
+      "weather": "cielo"
+    },
+    "empty": {
+      "title": "Sin fotos este día",
+      "description": "El Pi no capturó imágenes esta tarde."
+    },
+    "photoAlt": "Atardecer en Madrid el {date} a las {time}",
+    "markBest": "Marcar como mejor foto"
+  },
+  "live": {
+    "close": "Cerrar vista en vivo",
+    "badge": "en vivo",
+    "waiting": "Esperando captura...",
+    "description": "Vista en tiempo real desde Madrid",
+    "request": "Solicitar nueva foto",
+    "requestLabel": "Pedir nueva foto"
+  },
+  "about": {
+    "title": "Sobre este proyecto",
+    "body": "Cada tarde, una cámara en Madrid mira hacia el oeste. Espera, observa, elige. La mejor imagen del atardecer llega hasta aquí, sin filtros, sin edición, solo la luz del día que termina sobre los tejados de la ciudad.",
+    "body2": "Un regalo hecho con paciencia, código y muchas tardes de sol."
+  },
+  "auth": {
+    "login": {
+      "title": "Te estaba esperando",
+      "description": "Escribe tu correo y te mando un enlace y un código.",
+      "emailLabel": "Correo",
+      "emailPlaceholder": "tu@email.com",
+      "submit": "Mandarme el enlace",
+      "pending": "Enviando...",
+      "softMessage": "Si Supabase puede enviar a esa dirección, recibirás un código en breve.",
+      "linkExpired": "El enlace ha caducado o ya se usó. Pide un código nuevo.",
+      "sendFailed": "No se pudo enviar el código. Inténtalo de nuevo en un momento."
+    },
+    "verify": {
+      "title": "Casi dentro",
+      "description": "Puedes abrir el enlace del correo o escribir aquí el código que te ha llegado a <b>{email}</b>.",
+      "codeLabel": "Código del correo",
+      "submit": "Entrar",
+      "pending": "Comprobando...",
+      "invalidCode": "Ese código no es correcto o ha caducado.",
+      "noCode": "¿No te llega?",
+      "requestNew": "Pedir un código nuevo"
+    },
+    "menu": {
+      "label": "Cuenta",
+      "signOut": "Cerrar sesión"
+    },
+    "welcome": "Hola 🌅"
+  },
+  "theme": {
+    "light": "Modo claro",
+    "dark": "Modo oscuro",
+    "system": "Sistema",
+    "toggleLabel": "Cambiar tema de color"
+  },
+  "meta": {
+    "title": "Cielo de Madrid",
+    "description": "Un atardecer de Madrid, cada día."
+  }
+}

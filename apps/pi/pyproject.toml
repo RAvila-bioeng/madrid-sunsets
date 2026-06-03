@@ -1,0 +1,57 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "sunset-pi"
+version = "0.1.0"
+description = "Raspberry Pi sunset capture service"
+requires-python = ">=3.11"
+dependencies = [
+    "astral==3.2",
+    "apscheduler==3.10.4",
+    "pillow==11.1.0",
+    "opencv-python-headless==4.10.0.84",
+    "supabase==2.11.0",
+    "fastapi==0.115.6",
+    "uvicorn[standard]==0.34.0",
+    "pydantic==2.10.4",
+    "pydantic-settings==2.7.0",
+    "httpx==0.28.1",
+]
+
+[project.optional-dependencies]
+# picamera2 depends on Raspberry Pi OS apt packages and must be installed with:
+# `sudo apt install -y python3-picamera2`
+pi = []
+
+[dependency-groups]
+dev = [
+    "pytest==8.3.4",
+    "pytest-asyncio==0.25.0",
+    "ruff==0.8.6",
+    "black==24.10.0",
+    "mypy==1.14.1",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/sunset_pi"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B", "SIM"]
+
+[tool.black]
+line-length = 100
+target-version = ["py311"]
+
+[tool.mypy]
+strict = true
+python_version = "3.11"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

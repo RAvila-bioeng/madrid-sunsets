@@ -1,0 +1,21 @@
+{
+  "name": "@sunset/shared",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "gen:types": "supabase gen types typescript --linked > src/database.types.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check ."
+  },
+  "devDependencies": {
+    "typescript": "6.0.3"
+  }
+}
