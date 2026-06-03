@@ -1,10 +1,11 @@
 """Daily scheduling and orchestration for sunset capture."""
 
-from collections.abc import Sequence
-from datetime import date, datetime, timedelta
 import logging
 import time
+from collections.abc import Sequence
+from datetime import date, datetime, timedelta
 from pathlib import Path
+from typing import cast
 from zoneinfo import ZoneInfo
 
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -20,7 +21,6 @@ from sunset_pi.uploader import (
     mark_best_photo,
     upload_photo,
 )
-
 
 MADRID_TIMEZONE = ZoneInfo("Europe/Madrid")
 
@@ -122,4 +122,5 @@ def next_scheduled_run(scheduler: BackgroundScheduler) -> datetime | None:
     job = scheduler.get_job("daily-sunset-capture")
     if job is None:
         return None
-    return job.next_run_time
+
+    return cast(datetime | None, job.next_run_time)

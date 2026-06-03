@@ -1,10 +1,11 @@
 """Image scoring heuristics for sunset candidate photos."""
 
+from collections.abc import Iterable
 from pathlib import Path
+from typing import cast
 
 import cv2
 from PIL import Image, ImageStat
-
 
 ScoreComponents = dict[str, float]
 
@@ -15,12 +16,16 @@ def _clamp(value: float) -> float:
 
 def _warmth(image: Image.Image) -> float:
     rgb_image = image.convert("RGB")
-    pixels = rgb_image.getdata()
+    pixels = cast(Iterable[tuple[int, int, int]], rgb_image.getdata())
     total_pixels = rgb_image.width * rgb_image.height
     if total_pixels == 0:
         return 0.0
 
-    warm_pixels = sum(1 for red, _, blue in pixels if red > blue)
+    warm_pixels = 0
+    for red, _, blue in pixels:
+        if red > blue:
+            warm_pixels += 1
+
     return warm_pixels / total_pixels
 
 

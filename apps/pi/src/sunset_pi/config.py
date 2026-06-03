@@ -30,4 +30,5 @@ class Settings(BaseSettings):
     telegram_chat_id: str | None = Field(default=None, validation_alias="TELEGRAM_CHAT_ID")
 
 
-settings = Settings()
+# Pydantic settings reads required values from the environment at runtime.
+settings = Settings()  # type: ignore[call-arg]

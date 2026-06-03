@@ -1,15 +1,14 @@
 """Capture sunset-window JPEGs from the Raspberry Pi Camera Module 3."""
 
-from datetime import date, datetime
 import logging
-from pathlib import Path
 import time
+from datetime import date, datetime
+from pathlib import Path
 from typing import Any
 from zoneinfo import ZoneInfo
 
 from sunset_pi.camera import CAMERA_AVAILABLE, Picamera2
 from sunset_pi.config import settings
-
 
 CAPTURE_ROOT = Path("/tmp/sunset-pi")
 CAMERA_SIZE = (4608, 2592)
@@ -59,7 +58,9 @@ def capture_session(day_date: date) -> list[Path]:
         total_captures = _capture_count()
         for index in range(total_captures):
             output_path = _capture_path(output_dir)
-            logger.info("Capturing sunset photo %s/%s to %s", index + 1, total_captures, output_path)
+            logger.info(
+                "Capturing sunset photo %s/%s to %s", index + 1, total_captures, output_path
+            )
             camera.capture_file(
                 str(output_path),
                 format="jpeg",

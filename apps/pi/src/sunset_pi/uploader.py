@@ -13,7 +13,6 @@ from supabase import create_client
 
 from sunset_pi.config import settings
 
-
 MADRID_TIMEZONE = ZoneInfo("Europe/Madrid")
 
 
@@ -69,9 +68,7 @@ def upload_photo(path: Path, day_date: date, score: dict[str, float], is_best: b
     client = _client()
     bucket = settings.best_bucket if is_best else settings.raw_bucket
     storage_path = (
-        f"{day_date.isoformat()}/best.jpg"
-        if is_best
-        else f"{day_date.isoformat()}/{path.name}"
+        f"{day_date.isoformat()}/best.jpg" if is_best else f"{day_date.isoformat()}/{path.name}"
     )
     width, height = _dimensions(path)
 

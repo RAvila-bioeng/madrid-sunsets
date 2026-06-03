@@ -15,7 +15,9 @@ from sunset_pi.scheduler import (
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Run the sunset-pi capture scheduler.")
-    parser.add_argument("--now", action="store_true", help="Run today's capture pipeline immediately.")
+    parser.add_argument(
+        "--now", action="store_true", help="Run today's capture pipeline immediately."
+    )
     args = parser.parse_args()
 
     logging.basicConfig(
