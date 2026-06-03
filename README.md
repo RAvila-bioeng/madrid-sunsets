@@ -4,6 +4,12 @@
 
 An end-to-end Raspberry Pi sunset capture platform that automatically photographs Madrid sunsets and publishes selected images through a role-based web gallery.
 
+**Live site:** https://atardeceresmadrid.com/
+
+![Madrid Sunsets landing page showing the latest saved evening](docs/assets/image.png)
+
+_Landing page for the public Madrid Sunsets gallery._
+
 Originally built as a personal project, Madrid Sunsets combines embedded capture automation, image-processing heuristics, cloud storage, authentication, notifications, and a deployed web interface into a small privacy-aware product.
 
 ## Overview
